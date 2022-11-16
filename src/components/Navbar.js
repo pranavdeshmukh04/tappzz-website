@@ -48,6 +48,7 @@ const SearchContainer = styled.div`
 const Input = styled.input`
     border: none;
     width: 250px;
+    outline: none;
 `
 const LeftCenterContainer = styled.div`
     flex: 2;
@@ -66,7 +67,7 @@ const RightContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
 `
-const LogoItem = styled.div`
+const Item = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -101,14 +102,14 @@ const Navbar = () => {
         <RightContainer>
             <NavTitle>REGISTER</NavTitle>
             <NavTitle>SIGN IN</NavTitle>
-            <LogoItem>
+            <Item>
                 <Badge badgeContent={3} color="primary">
                     <LocalMallIcon style={{fontSize:32}}/>
                 </Badge>
-            </LogoItem> 
-            <LogoItem>
+            </Item> 
+            <Item>
                 <AccountCircleIcon style={{fontSize:32}}/>
-            </LogoItem>
+            </Item>
         </RightContainer>
       </Wrapper>
     </Container>
