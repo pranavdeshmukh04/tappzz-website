@@ -10,6 +10,7 @@ import LogoGif from '../images/shopping-cart.gif'
 
 const Container = styled.div`
     height: 60px;
+    margin-bottom: 1.5em;
 `
 const Wrapper = styled.div`
     padding: 15px 20px;
@@ -73,7 +74,6 @@ const Item = styled.div`
     align-items: center;
     margin-left: 25px;
 `
-
 
 const Navbar = () => {
   return (

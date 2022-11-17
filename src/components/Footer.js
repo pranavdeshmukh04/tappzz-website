@@ -7,7 +7,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Container = styled.div`
-  margin-top: 600px;
   display: flex;
   background-color: #F1F1F2;
 `
