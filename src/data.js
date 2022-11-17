@@ -24,43 +24,62 @@ export const sliderItems = [
 
   export const categories = [
     {
-      id: 1,
+      id: 101,
       img: "https://i.ibb.co/GTNhKZM/pexels-kafeel-ahmed-3998154.jpg",
       title: "ETHNIC WEAR",
     },
     {
-      id: 2,
+      id: 102,
       img: "https://i.ibb.co/sV8QWwz/logan-weaver-lgnwvr-Gi1r-Dqy9-R40-unsplash.jpg",
       title: "CASUAL WEAR",
     },
     {
-      id: 3,
+      id: 103,
       img: "https://i.ibb.co/SJJRTGq/mark-adriane-x-Qgh-SLXYD3-M-unsplash.jpg",
       title: "ACTIVE WEAR",
     },
     {
-      id: 4,
+      id: 104,
       img: "https://i.ibb.co/WFTNG75/ins-vikrant-f-Ds9-Mu-EJ4gc-unsplash.jpg",
       title: "WESTERN WEAR",
     },
     {
-      id: 5,
+      id: 105,
       img: "https://i.ibb.co/StbnDf3/pexels-oliver-sj-str-m-1103828.jpg",
       title: "SPORTS WEAR",
     },
     {
-      id: 6,
+      id: 106,
       img: "https://i.ibb.co/WpZSLSF/pexels-sam-lion-6001444.jpg",
       title: "LOUNGE WEAR",
     },
     {
-      id: 7,
+      id: 107,
       img: "https://i.ibb.co/ZB7DxbB/pylyp-sukhenko-Srs-IBi-JPpxs-unsplash.jpg",
       title: "FORMAL WEAR",
     },
     {
-      id: 8,
+      id: 108,
       img: "https://i.ibb.co/Cmyhqt7/daiga-ellaby-JZ51o-UOY8-unsplash.jpg",
       title: "KIDS WEAR",
     }
   ];
+
+  export const features = [
+    {
+      id: 1,
+      img: "https://i.ibb.co/J3RvW4K/feature1.png"
+    },
+    {
+      id: 2,
+      img: "https://i.ibb.co/ncd6krh/feature2.png"
+    },
+    {
+      id: 3,
+      img: "https://i.ibb.co/2K5hcCZ/feature3.png"
+    },
+    {
+      id: 4,
+      img: "https://i.ibb.co/f2MXbps/feature4.png"
+    }
+  ]
