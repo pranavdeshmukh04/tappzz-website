@@ -23,9 +23,7 @@ const LogoTitle = styled.img`
     height: 60px;
     margin-bottom: -10px;
 `
-const Description = styled.p`
-  margin: 20px 0px;
-`
+
 const SocialLogoContainer = styled.div`
   display: flex;
 `
