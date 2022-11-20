@@ -10,7 +10,7 @@ export const sliderItems = [
       id: 2,
       img: "https://i.ibb.co/gwhGXNc/slideimg6.png",
       title: "BEST OF BRANDS",
-      desc: "FASHION IS IN THE AIR0! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      desc: "FASHION IS IN THE AIR! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "BCBABE",
     },
     {
