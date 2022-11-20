@@ -4,7 +4,7 @@ import { features } from '../data'
 
 const Container = styled.div`
     display: flex;
-    padding: 2rem;
+    padding: 2rem 2rem 0;
     justify-content: space-between;
 `
 const Image = styled.img`

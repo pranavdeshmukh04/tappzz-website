@@ -29,11 +29,17 @@ const Title = styled.h1`
 `
 const Button = styled.button`
     border:none;
+
     padding: 10px;
     background-color: #F1F1F2;
     color: gray;
     cursor: pointer;
     font-weight: 600;
+    transition: all 0.5s ease;
+    &:hover{
+      background-color: #BCBABE;
+      transform: scale(1.1);
+    }
 `
 const CategoryItem = ({item}) => {
   return (
