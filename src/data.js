@@ -86,34 +86,34 @@ export const sliderItems = [
   export const newArrivalItems = [
     {
       id:1,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      img:"https://i.ibb.co/J7LV3tR/692-6920905-purple-shirt-png.png",
     },
     {
       id:2,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+      img:"https://i.ibb.co/KGKss3f/667-6677688-kurta-png.png",
     },
     {
       id:3,
-      img:"https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      img:"https://i.ibb.co/k4FpGwN/39-394416-jeans-png.png",
     },
     {
       id:4,
-      img:"https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+      img:"https://i.ibb.co/T1Z0CG5/612-6122978-shorts-png.png",
     },
     {
       id:5,
-      img:"https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+      img:"https://i.ibb.co/d5dgWFg/214-2148629-jacket-png.png",
     },
     {
       id:6,
-      img:"https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+      img:"https://i.ibb.co/R6RChhm/2-21784-skirt-png.png",
     },
     {
       id:7,
-      img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+      img:"https://i.ibb.co/zVZC2bY/41-416430-ladies-suit-png.png",
     },
     {
       id:8,
-      img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+      img:"https://i.ibb.co/jHNnyGV/124-1245557-black-t-shirt-template-png.png",
     },
   ]
