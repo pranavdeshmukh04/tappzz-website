@@ -117,3 +117,13 @@ export const sliderItems = [
       img:"https://i.ibb.co/jHNnyGV/124-1245557-black-t-shirt-template-png.png",
     }
   ]
+
+  export const ProductItem = [
+    {
+      id: 11,
+      img: "https://i.ibb.co/Pg6SGTW/khalid-boutchich-AGw-Mgx-Zs1-L0-unsplash.jpg",
+      title: "Audere Hoodie",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecvenenatis, dolor in finibus malesuada, lectus ipsum porta nunc, atiaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, egettristique tortor pretium ut. Curabitur elit justo, consequat idcondimentum ac, volutpat ornare.",
+      price: "27.5",
+    }
+  ]

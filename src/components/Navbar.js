@@ -124,7 +124,7 @@ const Navbar = () => {
                 </Badge>
             </Item> 
             <Item>
-                <Backdrop open={open} />
+                {/* <Backdrop open={open} />
                 <SpeedDial
                     ariaLabel="SpeedDial"
                     icon={<AccountCircleIcon style={{fontSize:32,color:"black"}}/>}
@@ -144,7 +144,7 @@ const Navbar = () => {
                         onClick={handleClose}
                     />
                 ))}
-                </SpeedDial>
+                </SpeedDial> */}
             </Item>
         </RightContainer>
       </Wrapper>
