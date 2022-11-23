@@ -115,5 +115,5 @@ export const sliderItems = [
     {
       id:8,
       img:"https://i.ibb.co/jHNnyGV/124-1245557-black-t-shirt-template-png.png",
-    },
+    }
   ]
