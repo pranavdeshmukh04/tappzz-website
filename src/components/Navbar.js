@@ -7,6 +7,13 @@ import Badge from '@mui/material/Badge';
 
 import LogoImage from '../images/tappzLogo2.png'
 import LogoGif from '../images/shopping-cart.gif'
+import Backdrop from '@mui/material/Backdrop';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import LogoutIcon from '@mui/icons-material/Logout';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import PersonIcon from '@mui/icons-material/Person';
 
 const Container = styled.div`
     height: 60px;
@@ -74,8 +81,17 @@ const Item = styled.div`
     align-items: center;
     margin-left: 25px;
 `
-
+const actions = [
+    { icon: <PersonIcon />, name: 'Account' },
+    { icon: <InventoryIcon />, name: 'Orders' },
+    { icon: <FavoriteIcon />, name: 'Wishlist' },
+    { icon: <LogoutIcon />, name: 'Logout' },
+  ];
 const Navbar = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    
   return (
     <Container>
       <Wrapper>
@@ -108,7 +124,27 @@ const Navbar = () => {
                 </Badge>
             </Item> 
             <Item>
-                <AccountCircleIcon style={{fontSize:32}}/>
+                <Backdrop open={open} />
+                <SpeedDial
+                    ariaLabel="SpeedDial"
+                    icon={<AccountCircleIcon style={{fontSize:32,color:"black"}}/>}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    open={open}
+                    direction = "down"
+                    background-color= "none"
+                    sx={{ '& .MuiFab-primary': {width: 40, height: 40,backgroundColor: 'white', boxShadow:"none",'&:hover': {backgroundColor: 'white'}} }}
+                >
+                {actions.map((action) => (
+                    <SpeedDialAction
+                        key={action.name}
+                        icon={action.icon}
+                        tooltipTitle={action.name}
+                        tooltipOpen
+                        onClick={handleClose}
+                    />
+                ))}
+                </SpeedDial>
             </Item>
         </RightContainer>
       </Wrapper>
