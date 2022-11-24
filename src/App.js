@@ -4,14 +4,23 @@ import Announcement from './components/Announcement'
 import Navbar from './components/Navbar'
 import Product from './pages/Product'
 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
 const App = () => {
   return (
     <div>
       <Announcement />
       <Navbar/>
-      <Home />
-      {/* <Product/> */}
-      
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/product" element={<Product/>} />
+        </Routes>
+      </Router>
     </div>
   )
 }
