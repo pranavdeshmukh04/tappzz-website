@@ -4,7 +4,6 @@ import Slider from '../components/Slider'
 import Categories from '../components/Categories'
 import Features from '../components/Features'
 import NewArrival from '../components/NewArrival'
-
 const Home = () => {
   return (
     <div>

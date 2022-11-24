@@ -24,11 +24,11 @@ const Categories = () => {
                 SHOP BY CATEGORY
             <AutoAwesomeIcon style={{color:"#1995AD", fontSize:40}}/>
             </Title>
-      <Container>
-        {categories.map((item)=>
-            <CategoryItem item={item} key={item.id}/>
-        )}
-      </Container>
+              <Container>
+                {categories.map((item)=>
+                    <CategoryItem item={item} key={item.id}/>
+                )}
+              </Container>
     </div>
   )
 }

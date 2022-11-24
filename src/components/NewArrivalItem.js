@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -68,13 +67,14 @@ const NewArrivalItem = ({item}) => {
   return (
     <Container>
       <Circle/>
+  
       <Image src={item.img}/>
       <Info>
         <Icon bg="1995AD">
-          <ShoppingCartIcon/>
+          <ShoppingCartIcon style={{color: "black"}}/>
         </Icon>
         <Icon bg="F00F56">
-          <FavoriteIcon/>
+          <FavoriteIcon style={{color: "black"}}/>
         </Icon>
       </Info>
     </Container>
