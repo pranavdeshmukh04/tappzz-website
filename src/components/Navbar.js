@@ -74,12 +74,22 @@ const RightContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 4rem;
 `
 const Item = styled.div`
+cursor: pointer;
+display: flex;
+align-items: center;
+margin-left: 25px;
+`
+const ItemSpeedDial = styled.div`
     cursor: pointer;
+    position: relative;
     display: flex;
     align-items: center;
-    margin-left: 25px;
+    justify-content: flex-end;
+    right: 1rem;
+    bottom: 3.9rem;
 `
 const actions = [
     { icon: <PersonIcon />, name: 'Account' },
@@ -122,9 +132,10 @@ const Navbar = () => {
                 <Badge badgeContent={3} color="primary">
                     <LocalMallIcon style={{fontSize:32}}/>
                 </Badge>
-            </Item> 
-            <Item>
-                {/* <Backdrop open={open} />
+            </Item>
+        </RightContainer>
+      </Wrapper>
+      <ItemSpeedDial>
                 <SpeedDial
                     ariaLabel="SpeedDial"
                     icon={<AccountCircleIcon style={{fontSize:32,color:"black"}}/>}
@@ -144,11 +155,11 @@ const Navbar = () => {
                         onClick={handleClose}
                     />
                 ))}
-                </SpeedDial> */}
-            </Item>
-        </RightContainer>
-      </Wrapper>
+                </SpeedDial>
+            </ItemSpeedDial>
+            
     </Container>
+    
   )
 }
 
