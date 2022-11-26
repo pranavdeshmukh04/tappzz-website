@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Announcement from "../components/Announcement";
 import Slider from "../components/Slider";
 import Categories from "../components/Categories";
 import Features from "../components/Features";

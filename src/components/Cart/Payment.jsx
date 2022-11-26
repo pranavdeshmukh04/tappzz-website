@@ -1,7 +1,7 @@
-import React, { Fragment, useEffect, useRef } from "react";
+import React, { Fragment } from "react";
 import CheckoutSteps from "./CheckoutSteps";
-import { useSelector, useDispatch } from "react-redux";
-// import { useCreateOrderMutation } from "../../services/appApi";
+import { useSelector } from "react-redux";
+import { useCreateOrderMutation } from "../../services/appApi";
 import { useNavigate } from "react-router";
 import {
   MDBBtn,
@@ -16,35 +16,46 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const Payment = ({ key }) => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  // const [createOrder, { isLoading, isSuccess }] = useCreateOrderMutation();
+  // const dispatch = useDispatch();
+  const [createOrder] = useCreateOrderMutation();
   const { cartItems } = useSelector((state) => state.cart);
+  const cart = [];
+  for (let index = 0; index < cartItems.length; index++) {
+    cart[index] = {
+      product: cartItems[index]._id,
+      name: cartItems[index].name,
+      quantity: cartItems[index].cartQuantity,
+      price: cartItems[index].price,
+      image: cartItems[index].images[0].url,
+    };
+  }
+  console.log(cart);
   const shipping = useSelector((state) => state.shipping);
   const { shipingInfo } = shipping;
   const shippingInfo = shipingInfo[0];
   const order = {
     shippingInfo,
-    orderItems: cartItems,
+    orderItems: cart,
     itemsPrice: orderInfo.subtotal,
     taxPrice: orderInfo.tax,
     shippingPrice: orderInfo.shippingCharges,
     totalPrice: orderInfo.totalPrice,
   };
-  console.log(order);
+  // console.log(order);
   // const order = {
   //   shippingInfo: {
   //     address: "dasfdsa",
   //     city: "dasfdsa",
   //     state: "dasfdsa",
   //     country: "dasfdsa",
-  //     pinCode: 55454,
-  //     phoneNo: 323232,
+  //     pinCode: "55454",
+  //     phoneNo: "323232",
   //   },
   //   orderItems: [
   //     {
   //       name: "JAcker",
-  //       price: 1.2,
-  //       quantity: 1,
+  //       price: "1.2",
+  //       quantity: "1",
   //       image: "https://i.ibb.co/SmqvJSf/pngfind-com-shoe-png-17335.png",
   //       product: "637a6a8c8aaff34908340db5",
   //     },
@@ -70,7 +81,8 @@ const Payment = ({ key }) => {
   // }, []);
   const submitHandler = async (e) => {
     e.preventDefault();
-    // createOrder({ order });
+    createOrder(order);
+    // call();
     navigate("/order-success");
   };
 

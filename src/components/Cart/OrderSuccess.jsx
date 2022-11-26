@@ -9,7 +9,7 @@ const OrderSuccess = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(clearCart());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="orderSuccess">

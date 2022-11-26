@@ -2,7 +2,9 @@ import React from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import styled from "styled-components";
-
+import { useParams } from "react-router";
+import { useGetSingleProductQuery } from "../services/appApi";
+import { ColorRing } from "react-loader-spinner";
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -15,12 +17,13 @@ const ImgContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  // border: 1px solid lightgray;
 `;
 
 const Image = styled.img`
-  width: 70%;
-  height: 75vh;
-  object-fit: cover;
+  width: 350px;
+  height: 600px;
+  // object-fit: cover;
   border-radius: 8%;
   transition: all 0.5s ease;
   &:hover {
@@ -134,8 +137,11 @@ const Item = styled.div`
   }
 `;
 const Product = () => {
-  const [count, setCount] = React.useState(1);
+  const { id } = useParams();
 
+  const [count, setCount] = React.useState(1);
+  const { data, isLoading } = useGetSingleProductQuery(id);
+  console.log(data);
   const increment = () => {
     setCount((count) => count + 1);
   };
@@ -147,48 +153,54 @@ const Product = () => {
   };
 
   return (
-    <Container>
-      <Wrapper>
-        <ImgContainer>
-          <Image src={item.img} />
-        </ImgContainer>
-        <InfoContainer>
-          <Title>{item.title}</Title>
-          <Desc>{item.description}</Desc>
-          <Price>$ {item.price}</Price>
-          <FilterContainer>
-            <Filter>
-              <FilterTitle>COLOR</FilterTitle>
-              <FilterColor color="black" />
-              <FilterColor color="darkblue" />
-              <FilterColor color="white" />
-            </Filter>
-            <Filter>
-              <FilterTitle>SIZE</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
-                <FilterSizeOption>S</FilterSizeOption>
-                <FilterSizeOption>M</FilterSizeOption>
-                <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
-              </FilterSize>
-            </Filter>
-          </FilterContainer>
-          <AddContainer>
-            <Button>ADD TO CART</Button>
-            <AmountContainer>
-              <Item>
-                <RemoveIcon onClick={decrement} />
-              </Item>
-              <Amount>{count}</Amount>
-              <Item>
-                <AddIcon onClick={increment} />
-              </Item>
-            </AmountContainer>
-          </AddContainer>
-        </InfoContainer>
-      </Wrapper>
-    </Container>
+    <>
+      {isLoading ? (
+        <ColorRing />
+      ) : (
+        <Container>
+          <Wrapper>
+            <ImgContainer>
+              <Image src={data.product.images[0].url} />
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{data.product.name}</Title>
+              <Desc>{data.product.description}</Desc>
+              <Price>$ {data.product.price}</Price>
+              <FilterContainer>
+                <Filter>
+                  <FilterTitle>COLOR</FilterTitle>
+                  <FilterColor color="black" />
+                  <FilterColor color="darkblue" />
+                  <FilterColor color="white" />
+                </Filter>
+                <Filter>
+                  <FilterTitle>SIZE</FilterTitle>
+                  <FilterSize>
+                    <FilterSizeOption>XS</FilterSizeOption>
+                    <FilterSizeOption>S</FilterSizeOption>
+                    <FilterSizeOption>M</FilterSizeOption>
+                    <FilterSizeOption>L</FilterSizeOption>
+                    <FilterSizeOption>XL</FilterSizeOption>
+                  </FilterSize>
+                </Filter>
+              </FilterContainer>
+              <AddContainer>
+                <Button>ADD TO CART</Button>
+                <AmountContainer>
+                  <Item>
+                    <RemoveIcon onClick={decrement} />
+                  </Item>
+                  <Amount>{count}</Amount>
+                  <Item>
+                    <AddIcon onClick={increment} />
+                  </Item>
+                </AmountContainer>
+              </AddContainer>
+            </InfoContainer>
+          </Wrapper>
+        </Container>
+      )}
+    </>
   );
 };
 

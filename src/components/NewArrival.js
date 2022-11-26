@@ -5,6 +5,7 @@ import NewArrivalItem from "./NewArrivalItem";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { useGetProductsQuery } from "../services/appApi";
 import { ColorRing } from "react-loader-spinner";
+
 const Container = styled.div`
   padding: 0 20px;
   display: flex;
@@ -24,7 +25,6 @@ const Loader = styled.div`
 `;
 const NewArrival = () => {
   const { data: products, isLoading, isSuccess } = useGetProductsQuery();
-
   return (
     <>
       {isLoading && (

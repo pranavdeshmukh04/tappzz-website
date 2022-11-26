@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Home from "./Pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -12,9 +12,10 @@ import Shipping from "./components/Cart/Shipping";
 import ConfirmOrder from "./components/Cart/ConfirmOrder";
 import Payment from "./components/Cart/Payment";
 import OrderSuccess from "./components/Cart/OrderSuccess";
-// import Product from "./Pages/Product";
+import Product from "./Pages/Product";
 const App = () => {
-  const { data, isLoading } = useLoadingUserQuery();
+  const { data } = useLoadingUserQuery();
+  console.log(data);
   return (
     <Router>
       <Announcement />
@@ -28,7 +29,7 @@ const App = () => {
         <Route exact path="/confirm-order" element={<ConfirmOrder />} />
         <Route exact path="/success" element={<OrderSuccess />} />
         <Route exact path="/payment" element={<Payment />} />
-        {/* <Route exact path="/product/:id" element={<Product />} /> */}
+        <Route exact path="/product/:id" element={<Product />} />
         <Route exact path="/order-success" element={<OrderSuccess />} />
       </Routes>
       <Footer />

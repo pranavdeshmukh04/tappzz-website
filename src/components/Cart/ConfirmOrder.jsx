@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import CheckoutSteps from "./CheckoutSteps";
 import { useSelector } from "react-redux";
 import "./ConfirmOrder.css";

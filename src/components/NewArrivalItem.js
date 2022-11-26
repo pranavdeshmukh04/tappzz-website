@@ -4,7 +4,8 @@ import styled from "styled-components";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router";
 import { addToCart } from "../features/cartSlice";
 const Info = styled.div`
   opacity: 0;
@@ -74,10 +75,13 @@ const NewArrivalItem = ({ item }) => {
     dispatch(addToCart(product));
     toast.success("Add to cart successfully");
   };
+  const disProduct = () => {
+    navigate("/product/" + item._id);
+  };
   return (
     <Container>
       <Circle />
-      <Image src={item.images[0].url} />
+      <Image src={item.images[0].url} onClick={disProduct} />
       <Info>
         <Icon bg="1995AD" onClick={() => handleAddToCart(item)}>
           <ShoppingCartIcon />

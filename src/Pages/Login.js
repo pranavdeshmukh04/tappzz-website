@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { Fragment, useState, useEffect } from "react";
 import {
   MDBContainer,
@@ -21,11 +22,23 @@ const Login = () => {
   // const dispatch = useDispatch();
   const history = useNavigate();
   const user = useSelector((state) => state.users);
-  console.log(user);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const pattern =
+      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (email === "" || password === "") {
+      toast.error("Please fill in all fields", {
+        style: { color: "#ed6f6f", fontWeight: "bold" },
+      });
+      return;
+    }
+    if (!pattern.test(email)) {
+      toast.error("Please enter a valid email", {
+        style: { color: "#ed6f6f", fontWeight: "bold" },
+      });
+      return;
+    }
     login({ email, password });
-    // dispatch(login(email, password));
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,11 +50,13 @@ const Login = () => {
     if (user.success) {
       history("/");
     }
-    if (user.isError) {
-      toast.error(user.isError);
+    if (isError) {
+      toast.error("Invalid email or password", {
+        style: { color: "#ed6f6f", fontWeight: "bold" },
+      });
     }
     console.log(user);
-  }, [user, history]);
+  }, [user, history, isError]);
 
   return (
     <Fragment>
@@ -115,6 +130,7 @@ const Login = () => {
           </div>
         </MDBCardBody>
       </MDBContainer>
+      <Toaster />
     </Fragment>
   );
 };
