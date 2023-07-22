@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import Home from "./Pages/Home";
 import Navbar from "./components/Navbar";
@@ -13,10 +14,25 @@ import ConfirmOrder from "./components/Cart/ConfirmOrder";
 import Payment from "./components/Cart/Payment";
 import OrderSuccess from "./components/Cart/OrderSuccess";
 import Product from "./Pages/Product";
+=======
+import React from 'react'
+import Home from './pages/Home'
+import Announcement from './components/Announcement'
+import Navbar from './components/Navbar'
+import Product from './pages/Product'
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+
+>>>>>>> main
 const App = () => {
   const { data } = useLoadingUserQuery();
   console.log(data);
   return (
+<<<<<<< HEAD
     <Router>
       <Announcement />
       <Navbar />
@@ -36,5 +52,19 @@ const App = () => {
     </Router>
   );
 };
+=======
+    <div>
+      <Announcement />
+      <Navbar/>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/product" element={<Product/>} />
+        </Routes>
+      </Router>
+    </div>
+  )
+}
+>>>>>>> main
 
 export default App;

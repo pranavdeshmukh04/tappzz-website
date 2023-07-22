@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import styled from "styled-components";
 import SearchIcon from "@mui/icons-material/Search";
@@ -8,6 +9,24 @@ import { useSelector } from "react-redux";
 import LogoImage from "../images/tappzLogo2.png";
 import LogoGif from "../images/shopping-cart.gif";
 import { Link } from "react-router-dom";
+=======
+import React from 'react'
+import styled from 'styled-components'
+import SearchIcon from '@mui/icons-material/Search';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
+import Badge from '@mui/material/Badge';
+
+import LogoImage from '../images/tappzLogo2.png'
+import LogoGif from '../images/shopping-cart.gif'
+import Backdrop from '@mui/material/Backdrop';
+import SpeedDial from '@mui/material/SpeedDial';
+import SpeedDialAction from '@mui/material/SpeedDialAction';
+import LogoutIcon from '@mui/icons-material/Logout';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import PersonIcon from '@mui/icons-material/Person';
+>>>>>>> main
 
 const Container = styled.div`
   height: 60px;
@@ -64,6 +83,7 @@ const NavTitle = styled.div`
   margin-left: 25px;
 `;
 const RightContainer = styled.div`
+<<<<<<< HEAD
   flex: 1;
   display: flex;
   align-items: center;
@@ -79,6 +99,40 @@ const Item = styled.div`
 const Navbar = () => {
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.users);
+=======
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 4rem;
+`
+const Item = styled.div`
+cursor: pointer;
+display: flex;
+align-items: center;
+margin-left: 25px;
+`
+const ItemSpeedDial = styled.div`
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    right: 1rem;
+    bottom: 3.9rem;
+`
+const actions = [
+    { icon: <PersonIcon />, name: 'Account' },
+    { icon: <InventoryIcon />, name: 'Orders' },
+    { icon: <FavoriteIcon />, name: 'Wishlist' },
+    { icon: <LogoutIcon />, name: 'Logout' },
+  ];
+const Navbar = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    
+>>>>>>> main
   return (
     <Container>
       <Wrapper>
@@ -105,6 +159,7 @@ const Navbar = () => {
         </RightCenterContainer>
 
         <RightContainer>
+<<<<<<< HEAD
           {!user.success && (
             <>
               <Link to="/register">
@@ -129,10 +184,49 @@ const Navbar = () => {
               <></>
             )}
           </Item>
+=======
+            <NavTitle>REGISTER</NavTitle>
+            <NavTitle>SIGN IN</NavTitle>
+            <Item>
+                <Badge badgeContent={3} color="primary">
+                    <LocalMallIcon style={{fontSize:32}}/>
+                </Badge>
+            </Item>
+>>>>>>> main
         </RightContainer>
       </Wrapper>
+      <ItemSpeedDial>
+                {/* <Backdrop open={open} /> */}
+                <SpeedDial
+                    ariaLabel="SpeedDial"
+                    icon={<AccountCircleIcon style={{fontSize:32,color:"black"}}/>}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    open={open}
+                    direction = "down"
+                    background-color= "none"
+                    sx={{ '& .MuiFab-primary': {width: 40, height: 40,backgroundColor: 'white', boxShadow:"none",'&:hover': {backgroundColor: 'white'}} }}
+                >
+                {actions.map((action) => (
+                    <SpeedDialAction
+                        key={action.name}
+                        icon={action.icon}
+                        tooltipTitle={action.name}
+                        tooltipOpen
+                        onClick={handleClose}
+                    />
+                ))}
+                </SpeedDial>
+            </ItemSpeedDial>
+            
     </Container>
+<<<<<<< HEAD
   );
 };
+=======
+    
+  )
+}
+>>>>>>> main
 
 export default Navbar;

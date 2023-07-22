@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 import styled from "styled-components";
@@ -7,6 +8,12 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // import { useNavigate } from "react-router";
 import { addToCart } from "../features/cartSlice";
+=======
+import React from 'react'
+import styled from 'styled-components'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+>>>>>>> main
 const Info = styled.div`
   opacity: 0;
   width: 100%;
@@ -80,6 +87,7 @@ const NewArrivalItem = ({ item }) => {
   };
   return (
     <Container>
+<<<<<<< HEAD
       <Circle />
       <Image src={item.images[0].url} onClick={disProduct} />
       <Info>
@@ -88,6 +96,17 @@ const NewArrivalItem = ({ item }) => {
         </Icon>
         <Icon bg="F00F56">
           <FavoriteIcon />
+=======
+      <Circle/>
+  
+      <Image src={item.img}/>
+      <Info>
+        <Icon bg="1995AD">
+          <ShoppingCartIcon style={{color: "black"}}/>
+        </Icon>
+        <Icon bg="F00F56">
+          <FavoriteIcon style={{color: "black"}}/>
+>>>>>>> main
         </Icon>
       </Info>
       <Toaster />

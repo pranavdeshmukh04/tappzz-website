@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import styled from "styled-components";
 import NewArrivalItem from "./NewArrivalItem";
@@ -6,6 +7,14 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { useGetProductsQuery } from "../services/appApi";
 import { ColorRing } from "react-loader-spinner";
 
+=======
+import React from 'react'
+import styled from 'styled-components'
+import { newArrivalItems } from '../data'
+import NewArrivalItem from './NewArrivalItem'
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { Link } from "react-router-dom";
+>>>>>>> main
 const Container = styled.div`
   padding: 0 20px;
   display: flex;
@@ -26,6 +35,7 @@ const Loader = styled.div`
 const NewArrival = () => {
   const { data: products, isLoading, isSuccess } = useGetProductsQuery();
   return (
+<<<<<<< HEAD
     <>
       {isLoading && (
         <Loader>
@@ -52,5 +62,24 @@ const NewArrival = () => {
     </>
   );
 };
+=======
+    <div>
+        <Title>
+            <AutoAwesomeIcon style={{color:"#1995AD", fontSize:40}}/>
+                NEW ARRIVALS
+            <AutoAwesomeIcon style={{color:"#1995AD", fontSize:40}}/>
+        </Title>
+        <Link to="/product">
+            <Container>
+            {newArrivalItems.map((item) => (
+                <NewArrivalItem item = {item} key={item.id}/>
+            ))}
+            </Container>
+        </Link>
+        
+    </div>
+  )
+}
+>>>>>>> main
 
 export default NewArrival;
